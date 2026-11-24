@@ -1,0 +1,360 @@
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wave-login {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: 80px 7%;
+  background:
+    radial-gradient(
+      ellipse at 84% 14%,
+      rgba(169, 225, 255, 0.65),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 10% 90%,
+      rgba(187, 204, 255, 0.65),
+      transparent 60%
+    ),
+    linear-gradient(130deg, #f4f8ff 0%, #e1efff 50%, #cde7ff 100%);
+}
+
+.ambient-glow {
+  position: absolute;
+  z-index: -1;
+  top: -160px;
+  right: -160px;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: rgba(186, 247, 255, 0.35);
+  filter: blur(85px);
+  pointer-events: none;
+}
+
+.wave-art {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.wave-login-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.login-intro {
+  padding-bottom: 75px;
+}
+
+.intro-eyebrow.MuiTypography-root {
+  margin-bottom: 18px;
+  color: #526c98;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.intro-title.MuiTypography-root {
+  color: #193c82;
+  font-size: clamp(48px, 5.4vw, 78px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -3px;
+}
+
+.intro-description.MuiTypography-root {
+  margin-top: 24px;
+  color: #526b91;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.glass-login-card {
+  padding: 44px 38px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 25px 75px rgba(63, 104, 167, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+}
+
+.card-eyebrow.MuiTypography-root {
+  margin-bottom: 14px;
+  color: #586d98;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+}
+
+.login-title.MuiTypography-root {
+  color: #172b50;
+  font-size: 30px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+}
+
+.login-subtitle.MuiTypography-root {
+  margin: 10px 0 32px;
+  color: #60718c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.login-field {
+  margin-bottom: 22px;
+}
+
+.login-field label {
+  display: block;
+  margin-bottom: 9px;
+  color: #344664;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.glass-input .MuiOutlinedInput-root {
+  min-height: 52px;
+  border-radius: 10px;
+  background: rgba(239, 243, 250, 0.85);
+  color: #243855;
+  font-size: 14px;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.glass-input .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(145, 165, 198, 0.18);
+}
+
+.glass-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #a7bde5;
+}
+
+.glass-input .MuiOutlinedInput-root.Mui-focused {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 4px rgba(69, 125, 245, 0.1);
+}
+
+.glass-input .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-width: 1px;
+  border-color: #648bf2;
+}
+
+.glass-input input::placeholder {
+  color: #728099;
+  opacity: 1;
+}
+
+.glass-input .MuiIconButton-root {
+  color: #667895;
+}
+
+.gradient-login-button.MuiButton-root {
+  min-height: 52px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #208fff 0%, #4055f5 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: none;
+  box-shadow: 0 8px 20px rgba(59, 102, 242, 0.2);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.gradient-login-button.MuiButton-root:hover {
+  background: linear-gradient(100deg, #147ff0 0%, #3448e8 100%);
+  box-shadow: 0 10px 24px rgba(59, 102, 242, 0.28);
+  transform: translateY(-1px);
+}
+
+.gradient-login-button.MuiButton-root.Mui-disabled {
+  background: #d8e1f1;
+  color: #566783;
+  box-shadow: none;
+}
+
+.gradient-login-button.MuiButton-root.Mui-focusVisible {
+  outline: 3px solid #183d99;
+  outline-offset: 4px;
+}
+
+.login-help.MuiTypography-root {
+  margin-top: 28px;
+  color: #61728d;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.login-footer.MuiTypography-root {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  color: #526b91;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .wave-login {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .wave-login-layout {
+    grid-template-columns: minmax(0, 1fr) 390px;
+    gap: 35px;
+  }
+
+  .intro-title.MuiTypography-root {
+    font-size: 54px;
+  }
+}
+
+@media (max-width: 760px) {
+  .wave-login {
+    padding: 48px 22px 80px;
+  }
+
+  .wave-login-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    max-width: 440px;
+  }
+
+  .login-intro {
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  .intro-eyebrow.MuiTypography-root {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .intro-title.MuiTypography-root {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .intro-title br {
+    display: none;
+  }
+
+  .intro-description.MuiTypography-root {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  .glass-login-card {
+    padding: 34px 26px 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-input .MuiOutlinedInput-root,
+  .gradient-login-button.MuiButton-root {
+    transition: none;
+  }
+
+  .gradient-login-button.MuiButton-root:hover {
+    transform: none;
+  }
+}
+
+.wave-login-layout > .glass-login-card {
+  grid-column: 2;
+}
+
+.glass-login-card .login-title.MuiTypography-root {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 760px) {
+  .wave-login-layout > .glass-login-card {
+    grid-column: 1;
+  }
+}
+
+.staffing-logo-slot {
+  display: grid;
+  place-items: center;
+}
+
+.staffing-logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(100px, 12vw, 148px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 30%;
+  background: linear-gradient(145deg, #f8fbff, #e0e7ff);
+  box-shadow: 0 16px 36px rgba(48, 76, 157, 0.14);
+}
+
+.staffing-logo-people.MuiSvgIcon-root {
+  width: 54%;
+  height: 54%;
+  color: #3457b8;
+}
+
+.staffing-logo-badge {
+  position: absolute;
+  right: 7%;
+  bottom: 7%;
+  display: grid;
+  place-items: center;
+  width: 34%;
+  aspect-ratio: 1;
+  border: 3px solid #eef2ff;
+  border-radius: 35%;
+  background: linear-gradient(135deg, #227ae5, #484bd8);
+  color: #fff;
+}
+
+.staffing-logo-badge .MuiSvgIcon-root {
+  width: 66%;
+  height: 66%;
+}
+
+@media (max-width: 760px) {
+  .staffing-logo {
+    width: 80px;
+  }
+}
